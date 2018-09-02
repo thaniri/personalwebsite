@@ -22,7 +22,7 @@ enableEmoji = true
 defaultContentLanguage = "en"
 
 [params.info]
-description = "Personal website for Marek Slabicki."
+description = "Personal website."
 title404 = "Resource not found."
 
 [params.assets]
@@ -131,7 +131,7 @@ page = "/:slug/"
 name = "Repo"
 weight = -10
 identifier = "repository"
-url = "https://github.com/MunifTanjim/minimo"
+url = "https://github.com/thaniri/personalwebsite"
 
 [blackfriday]
 hrefTargetBlank = true
