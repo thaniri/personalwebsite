@@ -78,7 +78,7 @@ Create an MX record which points your domain to Tutanota's mail servers, and a f
     "v=spf1 include:spf.tutanota.de -all"
    </td>
    <td>
-    8600
+    86400
    </td>
   </tr>
 </table>
