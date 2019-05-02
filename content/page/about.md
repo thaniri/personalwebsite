@@ -8,16 +8,8 @@ tags:
 weight: -210
 ---
 
-I am a Systems Administrator working in a Devops role.
+I've made my job finding the balance between software operations and product engineering.
 
-This means that, in addition to traditional sysadmin and networking skills, my skillset checks off some popular buzzwords like:
-
-* Infrastructure as Code
-* Configuration Management
-* Continous Integration
-* Loadbalancing
-* Cloud/On-prem Hybrid Infrastructure
-
-In order to maintain some modicum of programming proficiency, I also work on purely web development focussed side projects.
+It's my belief that in order to fully engineer a software system, one must be familiar with the entire stack. From the servers running the software to the final software product. Software development and operations are the inseperable halves of a well functioning system.
 
 This website is my place to return some of the knowledge I have gained back to the communities who helped me learn, as well as show off some of the cool things that I have independently done.
