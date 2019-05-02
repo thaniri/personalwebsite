@@ -57,6 +57,6 @@ Once these hacky solutions start coming in, with one-off shellscripts lying arou
 
 All this because of a decision to skip, or the ignorance towards, the need to improve a system so that it requires less, not more brilliance to maintain it.
 
-I haven't even gotten into writing simple, modular code, so that future maintainers of the code can reduce cognitive load by changing small pieces of it without undue concern about the entire application falling apart at the seams to do any small change.
+I haven't even gotten into writing simple, modular code, so that future maintainers of the code can reduce cognitive load by changing small pieces of it without undue concern about the entire application falling apart at the seams.
 
 [Relevant XKCD](https://imgs.xkcd.com/comics/data_pipeline.png)
