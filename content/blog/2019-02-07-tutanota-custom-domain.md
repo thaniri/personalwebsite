@@ -9,6 +9,9 @@ tags:
 weight: -210
 ---
 
+Updated 2019-08-12: Tutanota now supports [DKIM and DMARC!](https://tutanota.com/howto/#custom-domain0)
+
+
 # Why you should care
 
 [tutanota.com](https://tutanota.com/) Is a secure email service, which handles encryption of your emails and filters spam for you. The project is open source [https://github.com/tutao/tutanota](https://github.com/tutao/tutanota), GDPR compliant [https://tutanota.com/blog/posts/gdpr-compliant-email](https://tutanota.com/blog/posts/gdpr-compliant-email), and available on [Android](https://play.google.com/store/apps/details?id=de.tutao.tutanota&hl=en) as well as [iOS](https://itunes.apple.com/ca/app/tutanota/id922429609?mt=8).
@@ -18,12 +21,6 @@ There are a lot of other email providers out there, too many to count. Just sear
 Tutanota cares about protecting the user's data. The servers powering it are kept in Germany (take _that_ Patriot Act), emails are encrypted at rest and in transit, and two facter authentication is supported.
 
 You can use Tutanota for free. But if you want to support privacy on the internet, the price of €12 per year is not too steep. Or, if you want to follow a quick guide which will help you set up an email inbox using your own custom domain, then this post is targeted at you.
-
-## Some limitations worth noting
-
-Tutanota doesn't support [DMARC](https://dmarc.org/) for custom domain email addresses. If you just use the standard @tutanota.com, however, DMARC will work out of the box.
-
-Not every two facter authentication method you would like is supported. If you prefer SMS, or YubiKey, too bad. You can only use TOTP (which will likely be to Google Authenticator.)
 
 # Pre-amble over, the Guide
 
@@ -36,51 +33,18 @@ If you are willing to pay, pick Premium. If you don't want to pay, disregard the
 
 ### Create the required DNS records
 
-Create an MX record which points your domain to Tutanota's mail servers, and a fake SPF record which allows Tutanota to send emails on your domain's behalf.
+* MX record which points your domain to Tutanota's mail server.
+* fake SPF record (aas a TXT record) which allows Tutanota to send emails on your domain's behalf.
+* DMARC TXT record to help prevent senders spoofing your domain.
+* DKIM CNAME records to help prevent senders spoofing your domain.
 
 <table>
-  <tr>
-   <th>
-    Name
-   </th>
-   <th>
-    Type
-   </th>
-   <th>
-    Value
-   </th>
-   <th>
-    TTL
-   </th>
-  </tr>
-  </tr>
-   <td>
-    your-domain.com
-   </td>
-   <td>
-    MX
-   </td>
-   <td>
-    1 mail.tutanota.de
-   </td>
-   <td>
-    86400
-   </td>
-  </tr>
-  </tr>
-   <td>
-    your-domain.com
-   </td>
-   <td>
-    TXT
-   </td>
-   <td>
-    "v=spf1 include:spf.tutanota.de -all"
-   </td>
-   <td>
-    86400
-   </td>
-  </tr>
+  <tr><th>Name</th><th>Type</th><th>Value</th><th>TTL</th></tr>
+  <tr><td>your-domain.com</td><td>MX</td><td>1 mail.tutanota.de</td><td>86400</td></tr>
+  <tr><td>your-domain.com</td><td>TXT</td><td>"v=spf1 include:spf.tutanota.de -all"</td><td>86400</td></tr>
+  <tr><td>_dmarc.your-domain.com</td><td>https://tutanota.com/howto/#custom-domain</td><td>"v=DMARC1; p=quarantine; adkim=s"</td><td>86400</td></tr>
+  <tr><td>s1._domainkey.your-domain.com</td><td>CNAME</td><td>s1._domainkey.tutanota.de</td><td>86400</td></tr>
+  <tr><td>s1._domainkey.your-domain.com</td><td>CNAME</td><td>s2._domainkey.tutanota.de</td><td>86400</td></tr>
 </table>
 
 ### Configure your Tutanota account to use a custom domain
@@ -90,5 +54,3 @@ Create an MX record which points your domain to Tutanota's mail servers, and a f
 3. Settings > [user management](https://mail.tutanota.com/settings/users) > Click your user > create an email alias for your new domain
 
 Hurrah, you can now send and receive emails using your own domain. And it probably took less than 10 minutes.
-
-Also, use [Signal](https://signal.org/).
