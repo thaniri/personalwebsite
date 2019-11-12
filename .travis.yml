@@ -13,3 +13,5 @@ deploy:
   access_key_id: $KEY_ID
   secret_access_key: $ACCESS_KEY
   bucket: www.thaniri.com
+  region: us-east-1
+  local_dir: public
