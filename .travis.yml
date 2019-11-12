@@ -1,15 +1,17 @@
----
 install:
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.59.1/hugo_0.59.1_Linux-64bit.deb
-    -O hugo.deb
-  - sudo dpkg -i hugo.deb
+- wget https://github.com/gohugoio/hugo/releases/download/v0.59.1/hugo_0.59.1_Linux-64bit.deb
+  -O hugo.deb
+- sudo dpkg -i hugo.deb
 script:
-  - hugo
+- hugo
 deploy:
   provider: s3
-  access_key_id: $KEY_ID
-  secret_access_key: $ACCESS_KEY
+  access_key_id: AKIAI3EBWH7UDETTUYQA
+  secret_access_key:
+    secure: jmffB7ZdoRSxN2v0WKd2sblce1Tzq8YhzWtco5uOYKpk5X5UE3ZVRnNbrw54kx7CCmNhwNH3iB6vLwrIrqtmWty6dzFi+U1+wu6gX6BhFHfP8Y7n2Ifx22NUkT4o9pJjkgFAePEja0tbjsXlWrUtgohdmxipEq/SeKELuArB7k7fc3NkGh5IZSMXQo4IEwM0PTvLMFOkrvnCHq4bAbeCJDiydjxsEoakgm01ITI+mxaswxEPowKb5jSqhmg6sQx+u/lu/XHMx0wDzinEzvH6MQ04rVs8tFJf6fhAZ1kRmu1Vvdzzz6QuME3gjHefvdtkaKCRAhGbhy4huVZconLqsqchPVOX81CbOC6HnBchQsF2RGD9vATBsQ1A7t8Hk7INXGreXTLdUd5K3dVbfeZMwR8Ygw98nWHzLGNN0J4DxLMijFpr7SG8Adg3YBVnq8rv4AleusoO4E8t3j6JvEKu3qLTmUHmipeHjslvpxa3lc38GWCVOdldIAaWsBUyJPAs534qWpEoJJ20+qn+/Ct0RIWIe6JwcpR7yhnCk8rqS8klomUMQWCa72NuR27JJf/INHAv5dw9JThHrNqR94OHSbvz3damqpgO6txnRxuRVz67kwQO6zKmbybkMyS8wDxAJHTFixpXc7BNdvj/xsjWDGBqi+QVzIZej489hz/B9mM=
   bucket: www.thaniri.com
-  region: us-east-1
-  local_dir: public
+  local-dir: public
+  acl: public_read
+  on:
+    repo: thaniri/personalwebsite
   skip_cleanup: true
