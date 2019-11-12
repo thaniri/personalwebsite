@@ -1,0 +1,79 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Creates S3 and Cloudfront distribution for a static website. Should only be deployed in us-east-1 region."
+Parameters:
+  DomainName:
+    Type: String
+  ValidationDomain:
+    Type: String
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Description: 'The S3 bucket that contains the static web content'
+    Properties:
+      BucketName: !Join ['.', ['www', !Ref DomainName]]
+      WebsiteConfiguration:
+        IndexDocument: 'index.html'
+        ErrorDocument: '404.html'
+  S3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Description: 'Allows the public to read the contents of S3bucket'
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument: 
+        Statement: 
+          - Action: 
+              - "s3:GetObject"
+            Effect: "Allow"
+            Resource: 
+              Fn::Join: 
+                - ""
+                - - "arn:aws:s3:::"
+                  - Ref: S3Bucket
+                  - "/*"
+            Principal: "*"
+  TLSCert: # Look at stack output to see what DNS CNAME to create before CDNDistribution is made
+    Type: AWS::CertificateManager::Certificate
+    Description: 'Requests a TLS Certificate from Amazon Certificate Manager'
+    Properties:
+      DomainName: !Ref DomainName
+      DomainValidationOptions:
+        - DomainName: !Ref DomainName
+          ValidationDomain: !Ref ValidationDomain
+      ValidationMethod: 'DNS'
+  CDNDistribution: # This resource takes a long time to finish
+    Type: AWS::CloudFront::Distribution
+    Description: 'Creates a CloudFront Distribution which serves content from S3Bucket'
+    Properties:
+      DistributionConfig:
+        Comment: 'S3Website'
+        Aliases:
+          - !Ref DomainName
+        DefaultRootObject: 'index.html'
+        Enabled: true
+        ViewerCertificate:
+          AcmCertificateArn: !Ref TLSCert
+          SslSupportMethod: 'sni-only'
+        Origins:
+          - Id: 'S3Website'
+            DomainName: !GetAtt S3Bucket.DomainName
+            S3OriginConfig:
+              OriginAccessIdentity: '' # empty to allow both S3 and CloudFront access
+        HttpVersion: 'http2' # Forces sni and tls1.2+
+        IPV6Enabled: true
+        PriceClass: 'PriceClass_100' # EU and NA edge nodes only
+        DefaultCacheBehavior:
+          TargetOriginId: 'S3Website'
+          ViewerProtocolPolicy: 'redirect-to-https'
+          ForwardedValues:
+            QueryString: false
+  Route53ARecordAlias:
+    Type: AWS::Route53::RecordSet
+    Description: 'Points root of domain to CDN'
+    Properties:
+      HostedZoneName: !Join ["", [!Ref DomainName, "."]]
+      Type: 'A'
+      Name: !Ref DomainName
+      AliasTarget:
+        DNSName: !GetAtt CDNDistribution.DomainName
+        HostedZoneId: 'Z2FDTNDATAQYW2'
