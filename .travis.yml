@@ -7,7 +7,8 @@ script:
 deploy:
   provider: s3
   access_key_id: AKIAJLKMABGCOXGLQKWA
-  secret_access_key:
-    secure: tzse09goSUuRMuBfoSohrf8OEnlWhtTJqCcdKvyNo4WaC4iZUvvhzq77Q6xzR/Abvw0h66rOyJFbIWaq6UajPSylwTwydqfnj9/KcZenCwsyZK8zSxoU/fHbsLFOADjFWs5GFQfCqiDuu5KQov0QqkPqhFJGiM1MnRpNS02JQcYrkV6as1jPybxXvDL/GCssL9Hsmv0ao1g5Thggexr3KdRJbJIpM9xUeqnEw9OhKZQ7UcK/fgAWKlGKjCKdIu+Y5U8T6ZE5EzUJow+BiV1TIKQHCslZhDNjdP8+8c8P+LF94lwmtrvAbS1opn+gpNPCqa+KFoDhQ3w+gJp+nZxTYdNJk+uqCc0vPuef4luO6KD8lnDFUlt4FS3BVY9aSPFCzlG5Tywrk0GpmX5EPcYm0dioTbiRMDwMxgiKeERW9uOdWtZQRlQ3lKc/FZJjwedlivoiA7GDOtHMAq5uwZgQp0TA0IrPJxRFHOpvL510D/K6HArffeZa+qDGqaJDTD+3Eh2xhjoNU/dz2EL8jmTd/9wuogDvVX/dhtrxyzDXUPXCuBFMB/adgoVoZG3BSkKwzPxKPSn3OY4XjRJrr0BRKamRI265rQZ+/nXrY6/pqFMGIzmhqwvFrK0gGnkB19BYfZo7W8VMiWKOPFPIhfXQ3xm9nRBPw/Dlra+QVqAb4OY=
+  secret_access_key: $SECRET_ACCESS_KEY
   bucket: www.thaniri.com
   local-dir: public
+  skip_cleanup: true
+  region: us-east-1
