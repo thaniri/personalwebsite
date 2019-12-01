@@ -25,13 +25,9 @@ Resources:
           - Action: 
               - "s3:GetObject"
             Effect: "Allow"
-            Resource: 
-              Fn::Join: 
-                - ""
-                - - "arn:aws:s3:::"
-                  - Ref: S3Bucket
-                  - "/*"
-            Principal: "*"
+            Resource: !Join ['', ["arn:aws:s3:::", !Ref S3Bucket, "/*"]]
+            Principal:
+              AWS: !Join [' ', ["arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity", !Ref OriginAccessIdentity]]
   TLSCert: # Look at stack output to see what DNS CNAME to create before CDNDistribution is made
     Type: AWS::CertificateManager::Certificate
     Description: 'Requests a TLS Certificate from Amazon Certificate Manager'
@@ -41,9 +37,16 @@ Resources:
         - DomainName: !Ref DomainName
           ValidationDomain: !Ref ValidationDomain
       ValidationMethod: 'DNS'
+  OriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Description: 'Limits access to the S3 bucket to only Cloudfront'
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 'S3Website'
   CDNDistribution: # This resource takes a long time to finish
     Type: AWS::CloudFront::Distribution
     Description: 'Creates a CloudFront Distribution which serves content from S3Bucket'
+    DependsOn: OriginAccessIdentity
     Properties:
       DistributionConfig:
         Comment: 'S3Website'
@@ -58,7 +61,11 @@ Resources:
           - Id: 'S3Website'
             DomainName: !GetAtt S3Bucket.DomainName
             S3OriginConfig:
-              OriginAccessIdentity: '' # empty to allow both S3 and CloudFront access
+              OriginAccessIdentity:
+                Fn::Join:
+                  - ''
+                  - - 'origin-access-identity/cloudfront/'
+                    - Ref: OriginAccessIdentity
         HttpVersion: 'http2' # Forces sni and tls1.2+
         IPV6Enabled: true
         PriceClass: 'PriceClass_100' # EU and NA edge nodes only
