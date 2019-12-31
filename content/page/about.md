@@ -7,5 +7,6 @@ tags:
   - none
 weight: -210
 ---
+I am a software professional. I deploy, maintain, design, and implement software systems.
 
 This website is my place to return some of the knowledge I have gained back to the communities who helped me learn, as well as show off some of the cool things that I have independently done.
