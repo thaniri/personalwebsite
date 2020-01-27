@@ -148,13 +148,13 @@ A runlevel is a description of what is running on a server at a particular runle
 
 There are 6 standard runlevels, but more can be added:
 
-0. Shutdown. The server will shut down at this runlevel.
-1. Single-user mode, no networking.
-2. Multi-user mode, no networking.
-3. Multi-user mode, with networking.
-4. Skipped.
-5. Multi-user mode, with networking and GUI.
-6. Reboot. The server will restart at this runlevel.
+* 0 - Shutdown. The server will shut down at this runlevel.
+* 1 - Single-user mode, no networking.
+* 2 - Multi-user mode, no networking.
+* 3 - Multi-user mode, with networking.
+* 4 - Skipped.
+* 5 - Multi-user mode, with networking and GUI.
+* 6 - Reboot. The server will restart at this runlevel.
 
 To get the current (and previous) runlevel, just run the `runlevel` command.
 
