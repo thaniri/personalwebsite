@@ -1,5 +1,5 @@
 ---
-date: 2020-05-20T00:00:00+00:00
+date: 2020-05-21T00:00:00+00:00
 title: HeroMarine vs Reynor TSL5 Round 2 Analysis
 description: Analysis of a series where Gabriel "HeroMarine" Segat shows off a low economy mid-game focussed bio style to defeat Riccardo "Reynor" Romiti in a best of five series with a 3-1 score. The match was played on 2020-05-17.
 tags:
@@ -21,7 +21,7 @@ Some examples of my writing:
 
 Starcraft continues to be a hobby I come back to from time to time, so I will do more posts like these. I really admire [terrancraft](https://terrancraft.com/) and would like to contribute to Terran strategy knowledge as well.
 
-I'm writing this analysis in the way that I use personally, but if there aree some formatting or style differences that you might find better, do let me know!
+I'm writing this analysis in the way that I use personally, but if there are some formatting or style differences that you might find better, do let me know!
 
 # Videos/Replays
 
