@@ -33,11 +33,11 @@ Should replays become available I will also host them on this website.
 
 # Overall Strategy
 
-In each game, the strategy HeroMarine employed is to attack very aggressively on a 3 base economy and play into an extended low-tech mid-game while maintaining about 2.5 mining bases. Due to not attempting to maintain a 3 base economy for the entirety of the game this allowed HeroMarine to reduce his attack surface against Reynor's counterattacks as well as concentrate his forces in higher numbers at earlier times.
+In each game, the strategy HeroMarine employed is to attack very aggressively on a 3 base economy and play into an extended low-tech mid-game while maintaining about 2.5 mining bases. Due to not attempting to maintain a 3 base economy for the entirety of the game, HeroMarine was able to reduce his attack surface against Reynor's counterattacks as well as concentrate his forces in higher numbers at earlier times.
 
 The infrastructure build-up played out differently in each game, but converged on a simple pattern: a roughly mid 60 SCV count economy, 8 Barracks (3 Techlabs, 5 Reactors), 2 Factories (1 Techlab, 1 Reactor), and 1 Starport (1 Reactor).
 
-Due to the weak economy nature of the style, there was no transition to air units nor Ghosts.
+Due to the weak economy nature of the style, there was no late-game transition to air units nor Ghosts.
 
 In the extended mid-game, both players split their forces into relatively evenly sized armies. The interactions between them are mostly to split the opponent's attention, and rarely to consolidate. Occasionally either player may choose to dedicate between 10 and 20 supply of army as a harassing force, but harassment was not a key feature in these games.
 
@@ -51,7 +51,7 @@ The strategy for each game is the same, but the way to achieve that strategy is 
 
 In this game, HeroMarine will go for an unconventional 2 Reaper opening in order to delay Reynor's third base.
 
-Afterwards He will get a relatively quick third Command Centre, power up to a three base economy, do a strong timing attack, and build out his infrastructure for an extended mid-game.
+Afterwards he will get a relatively quick third Command Centre, power up to a three base economy, do a strong timing attack, and build out his infrastructure for an extended mid-game.
 
 ## Build Order
 
@@ -96,11 +96,10 @@ Afterwards He will get a relatively quick third Command Centre, power up to a th
 ## Game Notes
 
 1. HeroMarine sometimes mixes in 1 or 2 Thors into an army against Mutalisk players, but never more.
-2. When splitting infantry against Banelings, the Zerg player isn't always paying as much attention as the Terran player. Knowing this, you can leave behind individual Marines in order to distract the AI of the Banelings briefly and let the larger group survive for a bit longer. An example at [11:15](https://youtu.be/0z0B-sr8LPs?t=697)
+2. When splitting infantry against Banelings, the Zerg player isn't always paying as much attention as the Terran player. Knowing this, the Terran player can leave behind individual Marines in order to distract the AI of the Banelings briefly and let the larger group survive for a bit longer. An example at [11:15](https://youtu.be/0z0B-sr8LPs?t=697)
 3. When chasing Mutalisks, only stim some of the army, not all of it. [6:15](https://youtu.be/0z0B-sr8LPs?t=404). This is a consistent pattern. Pay attention for the next few minutes as HeroMarine moves his slower infantry on interception paths towards the Mutalisks. He looks at the direction the Mutalisks are travelling, aims at their destination, and then stims just a small portion of his army to chase them away.
-4. Zerg players will throw Banelings at a group of infantry when they know the Terran player's attention has been diverted. At [8:30](https://youtu.be/0z0B-sr8LPs?t=533) Reynor distracts HeroMarine with a counterattack at HeroMarine's third base. As soon as Reynor notices that HeroMarine is beginning to micro at home, he sends his Banelings into the frontline army. Because human attention can only be giveen in one place at a time, it is extremely important to cycle ones attention between groups of armies the same way one cycles attention between production cycles. That way the window in which the Terran player can be surprised by an attack is reduce significantly. At [9:10](https://youtu.be/0z0B-sr8LPs?t=576) it really pays of for Reynor as a few Baneling connections wipe out the rest of the frontline army.
-5. Zerg players will send their Banelings into your main army when they notice you microing a second force. [7:40?] It is critical to be cycling attention between the two armies in order to not have one immediately die to Banelings.
-6. HeroMarine seems to prefer to posiition his first Barracks in such a way that it does not require a lift and reposition in order to build an addon. This has an advantage in that it makes all of his openings look identical to any potential scouts.
+4. Zerg players will throw Banelings at a group of infantry when they know the Terran player's attention has been diverted. At [8:30](https://youtu.be/0z0B-sr8LPs?t=533) Reynor distracts HeroMarine with a counterattack at HeroMarine's third base. As soon as Reynor notices that HeroMarine is beginning to micro at home, he sends his Banelings into the frontline army. Because human attention can only be given in one place at a time, it is extremely important to cycle ones attention between groups of armies the same way one cycles attention between production cycles. That way the window in which the Terran player can be surprised by an attack is reduced significantly. At [9:10](https://youtu.be/0z0B-sr8LPs?t=576) it really pays of for Reynor as a few Baneling connections wipe out the rest of the frontline army.
+5. HeroMarine seems to prefer to position his first Barracks in such a way that it does not require a lift and reposition in order to build an addon. This has an advantage in that it makes all of his openings look identical to any potential scouts.
 
 # Game 2
 
@@ -160,8 +159,8 @@ If the game isn't won outright with the attack, the plan is to continue to produ
 
 1. Only reveal the first 2 Hellions and 1 Reaper at the front. Load up the next 4 Hellions into a Medivac. All Hellions produced after the 6th are hidden and waiting for the blue flame timing attack.
 2. Especially against Reynor, the tendency is to leave Hellions 3-6 at the natural to defend against Zergling counter attacks. Hiding these Hellions looks totally ordinary.
-3. Hellion production doesn't stop after the attack because there was no Marine production for a long time. These are critical to holding counters.
-4. HeroMarine often times parks an army just outside of creep and focusses his attention elsewhere on the map. This is actually a pretty valuable tactic to prevent further creep spread when you cannot necessarily kill any. For example at [14:51](https://youtu.be/0z0B-sr8LPs?t=1756) he leaves a small force just off of creep at the 11 o'clock position while he is consolidating an army in the centre of the map. As soon as he is done microing the force in the middle, he jumps in to maintain map control in the north.
+3. Hellion production doesn't stop after the attack because there was no Marine production for a long time. These additional Hellions are critical to holding counters.
+4. HeroMarine often times parks an army just outside of creep and focusses his attention elsewhere on the map. This is a valuable tactic to prevent further creep spread when you cannot necessarily clear it. For example at [14:51](https://youtu.be/0z0B-sr8LPs?t=1756) he leaves a small force just off of creep at the 11 o'clock position while he is consolidating an army in the centre of the map. As soon as he is done microing the force in the middle, he jumps in to maintain map control in the north.
 5. HeroMarine only makes 1 Missile Turret per mineral line, and 1-2 to defend his add-ons [11:00](https://youtu.be/0z0B-sr8LPs?t=1527). This is because Missile Turrets are quite expensive when massed, and are not actually particularly effective against very high numbers of Mutalisks. The goal of the Missile Turrets is to buy a little bit of time for a defending force to stim in and shoo away the Mutalisks. Examples at: [12:00](https://youtu.be/0z0B-sr8LPs?t=1589), [13:50](https://youtu.be/0z0B-sr8LPs?t=1695)
 6. With spare gas, use the Armoury to research Vehicle armour. This is because Widow Mines do not benefit from attack upgrades.
 7. After the Zerg player has secured 8 gas geisers, it is very feasible for them to make mass Banelings or Ultralisks. It is around this point that Marauder production is emphasized.
@@ -216,22 +215,22 @@ We'll start the analysis at [5:20](https://www.twitch.tv/videos/623686582?t=08h4
 
 The situation could have been even worse, because Reynor was sprinkling in Zerglings into his production cycles. He could have gotten to his three base economy a full 30 seconds earlier with no threat had he not. It's not until [9:00] (!!) that HeroMarine is able to push the creep back by any meaningful amount. By this time Reynor has already achieved his maximum economy and is only focussing his attention on creating army units. One of the key patterns in TvZ is to slow down the Zerg economy by making them judiciously choose to spend their limited larva on either army units or Drones. Reynor was free to build up his economy as he pleased.
 
-HeroMarine lost his initial map presence, which gave Reynor more confidence to drone harder. And because the Hellions were important for the followup 1-1 timing attack, that timing attack ended up being quite ineffectual.
+HeroMarine lost his initial map presence, which gave Reynor more confidence to drone harder. And because the Hellions were important for the followup 1-1 timing attack, that timing attack ended up being ineffective.
 
 From this type of position, playing this type of style, the Terran player cannot abuse the expected army advantage with multi-pronged attacks, because no such army advantage exists. When playing a low economy game, the supply that wasn't put into making SCVs naturally goes into army. But if the army is smaller than expected, then the advantage of the style is lost.
 
-It wasn't impossible to get back into this game but there were some risks taken with Medivac harassment that didn't pay off, and no risk was attempted to take a fourth base on the side of HeroMarine. Once HeroMarine went in for the 2-2 timing attack, that was the last ditch effort and it didn't end up working.
+It wasn't impossible to get back into this game, but it requires risk taking to come back from a deficit. There were some risks taken with Medivac harassment that unfortunately didn't pay off, and no risk was attempted to take a fourth base on the side of HeroMarine. Once HeroMarine went in for a 2-2 timing attack, that was the last ditch effort and it didn't end up working.
 
 They key points to take away would be:
 
 1. When going for Hellions and a single Non-cloaked Banshee, these units are best used to control creep and force a reaction from the Zerg player, not nessarily to do big damage.
-2. Once behind, risks need to be taken, and they need to pay off. HeroMarine made many attempts to harass with dropships: [8:30](https://www.twitch.tv/videos/623686582?t=08h40m36s), [9:50](https://www.twitch.tv/videos/623686582?t=08h40m36s), [10:40](https://www.twitch.tv/videos/623686582?t=08h40m36s) but none of them ended up doing meaningful damage. Because of this HeroMarine couldn't crawl back into the game. One risk that could have been considered would be to take a fourth base behind the 2-2 attack while behind.
+2. Once behind, risks need to be taken, and they need to pay off. HeroMarine made many attempts to harass with dropships: [8:30](https://www.twitch.tv/videos/623686582?t=08h40m36s), [9:50](https://www.twitch.tv/videos/623686582?t=08h40m36s), [10:40](https://www.twitch.tv/videos/623686582?t=08h40m36s) but none of them ended up doing meaningful damage. Because of this HeroMarine couldn't crawl back into the game. One risk that could have been considered would be to take a fourth base behind the 2-2 attack in order to catch up economically.
 
 # Game 4
 
 ## Tactical Plan
 
-In this game Reynor goes for the same opening as in game 1, but this time takes advantage of the map terran to do a Siege Tank timing attack.
+In this game HeroMarine goes for the same opening as in game 1, but this time takes advantage of the map terran to do a Siege Tank timing attack.
 
 Taking advantage of the cliffs around Reynor's fourth base, HeroMarine was able to create a much more vicious timing attack that forced Reynor to surrender his fourth.
 
@@ -287,11 +286,11 @@ One key difference between this game and the previous games is that HeroMarine b
 
 ## Game Notes
 
-1. The timing attack at [7:30](https://youtu.be/0z0B-sr8LPs?t=3468) is great. HeroMarine uses smalls groups of Marines to threaten the hatchery, so that if Reynor decides to ever fight back they simply retreat into Siege Tank range. Reynor makes it quite obvious that he is delaying for time, and HeroMarine brilliantly reads the game to know this is a sign that Reynor is taking the other fourth base. Withou any scouting or scanning at [8:15](https://youtu.be/0z0B-sr8LPs?t=3501) HeroMarine loads up two Medivacs to deny the other fourth base from Reynor. After this move, HeroMarine is quite far ahead in the game.
-2. Just like in previous games, against Mutalisks HeroMarine continues to only create small numbers of Missile Turrets, and relies instead of reserve forces to chase around harassing Mutalisks.
-3. A minor point, but at [9:00](https://youtu.be/0z0B-sr8LPs?t=3549) there really isn't much point to continuing the attack. The damage has been done, this army does not need to be suicided. HeroMarine's lead is still significant, but blunted after this move.
+1. The timing attack at [7:30](https://youtu.be/0z0B-sr8LPs?t=3468) is great. HeroMarine uses small groups of Marines to threaten the hatchery, so that if Reynor decides to ever fight back they simply retreat into Siege Tank range. Reynor makes it quite obvious that he is delaying for time, and HeroMarine brilliantly reads the game to know this is a sign that Reynor is taking the other fourth base. Withou any scouting or scanning, at [8:15](https://youtu.be/0z0B-sr8LPs?t=3501) HeroMarine loads up two Medivacs to deny the other fourth base from Reynor. After this move, HeroMarine is quite far ahead in the game.
+2. Just like in previous games against Mutalisks, HeroMarine continued to only create small numbers of Missile Turrets, and relied instead on using reserve forces to chase around harassing Mutalisks.
+3. A minor error, but at [9:00](https://youtu.be/0z0B-sr8LPs?t=3549) there really isn't much point to continuing the attack. The damage has been done, this army does not need to be suicided. HeroMarine's lead is still significant, but blunted after this move.
 4. In games with low Hellion counts, being conservative with the Hellions is the better play as it forces more honest defensive play from the Zerg, and also makes defending Zergling runbys easier.
-5. A very interesting point, when HeroMarine noticed that no Zerglings were defending against the Reaper, he rallied his second Reaper to a defensive position at [2:28](https://youtu.be/0z0B-sr8LPs?t=3160). As soon as he saw defending Zerglings, he move the second Reaper to the frontline. These minor points, while many of them missed in high level analyses like these, are the differentiators that mark a great player.
+5. A very interesting point, when HeroMarine noticed that no Zerglings were defending against the Reaper, he rallied his second Reaper to a defensive position at [2:28](https://youtu.be/0z0B-sr8LPs?t=3160). As soon as he saw defending Zerglings, he moved the second Reaper to the frontline. These minor points, while many of them missed in high level analyses like these, are the differentiators that mark a great player.
 
 # Series Retrospective
 
