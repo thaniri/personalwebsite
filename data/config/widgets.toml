@@ -7,7 +7,7 @@ logo = "/images/logo.png"             # default: "/images/logo.png"
 # Recent Posts Widget config
 [recent_posts]
 title = ""                            # default: "Recent Posts"
-length = 4                            # default: 5
+length = 10                           # default: 50
 excludeTypes = ["page"]               # default: ["page"]
 
 # Search Widget config
@@ -22,7 +22,7 @@ title = "Search"                      # default: "Search"
 # Social Menu Widget config
 #[social_menu]
 #title = ""                            # default: ""
-#platforms = ["github","facebook","twitter","instagram","email","codepen","gitlab","linkedin","telegram","google_scholar","youtube"]
+platforms = ["github","facebook","twitter","instagram","email","codepen","gitlab","linkedin","telegram","google_scholar","youtube","bmac"]
 
 # Taxonomy Cloud Widget config
 [taxonomy_cloud]

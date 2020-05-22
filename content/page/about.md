@@ -9,4 +9,8 @@ weight: -210
 ---
 I am a software professional. I design, implement, deploy, and maintain software systems.
 
-This website is my place to return some of the knowledge I have gained back to the communities who helped me learn, as well as show off some of the cool things that I have independently done.
+I also like to play competitive video games in my spare time. You may find me doing technical analysis on Starcraft 2.
+
+This website is ad-free and cookie free, and I would like to keep it that way. My content will always be free to distribute and never be behind a paywall.
+
+If this website helps just one person gain some insight, then I consider the whole endeavour a success.
