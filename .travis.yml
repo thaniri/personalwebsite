@@ -8,7 +8,7 @@ deploy:
   provider: s3
   access_key_id: AKIAQTXINEKIDR3FLW73
   secret_access_key: $SECRET_ACCESS_KEY
-  bucket: www.thaniri.com
+  bucket: www.thaniri.ca
   local-dir: public
   skip_cleanup: true
   region: us-east-1
