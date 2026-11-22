@@ -119,6 +119,9 @@ tag = "tags"
 [pagination]
 pagerSize = 10
 
+[markup.goldmark.renderer]
+unsafe = true # render raw HTML in content, as Blackfriday did before Hugo v0.60
+
 [permalinks]
 page = "/:slug/"
 
