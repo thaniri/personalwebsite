@@ -53,9 +53,6 @@ admins = [] # array of Facebook IDs
 appID = ""
 pageID = ""
 
-[params.opengraph.twitter]
-page = "thaniri" # Twitter page username
-
 [params.seo]
 # Title Separator: - – — · • * ⋆ | ~ « » < >
 titleSeparator = "•"
@@ -68,7 +65,6 @@ github = "thaniri"
 #gitlab = ""
 #instagram = ""
 linkedin = "thaniri"
-twitter = "thaniri"
 #telegram = ""
 #google_scholar = ""
 #youtube = ""
