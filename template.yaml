@@ -51,7 +51,7 @@ Resources:
           SslSupportMethod: 'sni-only'
         Origins:
           - Id: 'S3Website'
-            DomainName: !GetAtt S3Bucket.DomainName
+            DomainName: !GetAtt S3Bucket.RegionalDomainName
             S3OriginConfig:
               OriginAccessIdentity:
                 Fn::Join:
