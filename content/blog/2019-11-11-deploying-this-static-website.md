@@ -18,7 +18,21 @@ The Cloudformation templates that run this site are (mostly) automated and you c
 
 The site is split across two Cloudformation stacks. The intention is to host all content in Canada, but CloudFront only accepts TLS certificates from Amazon Certificate Manager in `us-east-1`. So one stack deploys the TLS certificate, and the rest deploys the website.
 
-This is the process I got it down to so far:
+## Development environment
+
+The repository has a [Nix flake](https://github.com/thaniri/personalwebsite/blob/master/flake.nix) that provides the tools needed for deployment.
+
+1. Clone the repository and change into it: `git clone https://github.com/thaniri/personalwebsite.git && cd personalwebsite`
+2. Start the development environment, either:
+    - with [direnv](https://direnv.net/) (ideally with [nix-direnv](https://github.com/nix-community/nix-direnv) for caching): run `direnv allow` once, and the environment loads every time you change into the directory, or
+    - without direnv: run `nix develop` to start a shell with the environment.
+3. Configure AWS credentials outside of the repository, for example with `aws configure sso` (or `aws configure`) which stores them under `~/.aws`. Credentials are never committed to the repository.
+4. Select the AWS profile for this repository: `echo 'export AWS_PROFILE=<profile name>' > .envrc.local`, then `direnv reload`. `.envrc.local` is gitignored. Without direnv, run `export AWS_PROFILE=<profile name>` in the `nix develop` shell instead.
+5. Check that the AWS CLI is authenticated: `aws sts get-caller-identity`
+
+## Deploying the stacks
+
+This is the process I got it down to so far, with every command run from inside the development environment:
 
 1. Run an AWS CLI Command to deploy the certificate stack: `aws cloudformation create-stack --stack-name thaniriCertificate --template-body file://certificate.yaml --region us-east-1 --parameters ParameterKey=DomainName,ParameterValue=thaniri.ca ParameterKey=HostedZoneId,ParameterValue=Z048506537ITRMM3F4T4D`
 2. Get the certificate ARN from the certificate stack's outputs: `aws cloudformation describe-stacks --stack-name thaniriCertificate --region us-east-1 --query "Stacks[0].Outputs[?OutputKey=='CertificateArn'].OutputValue" --output text`
