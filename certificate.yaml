@@ -4,17 +4,18 @@ Description: "Creates the TLS certificate for the static website's CloudFront di
 Parameters:
   DomainName:
     Type: String
-  ValidationDomain:
-    Type: String
+  HostedZoneId:
+    Type: AWS::Route53::HostedZone::Id
+    Description: 'Route 53 hosted zone for DomainName, used to create the DNS validation record automatically'
 Resources:
-  TLSCert: # Look at stack events to see what DNS CNAME to create before the certificate is issued
+  TLSCert: # CloudFormation creates the DNS validation CNAME in HostedZoneId and waits for the certificate to be issued
     Type: AWS::CertificateManager::Certificate
     Description: 'Requests a TLS Certificate from Amazon Certificate Manager'
     Properties:
       DomainName: !Ref DomainName
       DomainValidationOptions:
         - DomainName: !Ref DomainName
-          ValidationDomain: !Ref ValidationDomain
+          HostedZoneId: !Ref HostedZoneId
       ValidationMethod: 'DNS'
 Outputs:
   CertificateArn:
