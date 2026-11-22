@@ -5,16 +5,7 @@ copyright = ""
 
 theme = "minimo"
 
-disqusShortname = ""
-googleAnalytics = ""
-
-Paginate = 10
-preserveTaxonomyNames = true
-
 enableRobotsTXT = true # generate robots.txt
-
-# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
-pygmentsCodefences = true
 
 enableEmoji = true
 
@@ -125,6 +116,9 @@ category = "categories"
 series = "series"
 tag = "tags"
 
+[pagination]
+pagerSize = 10
+
 [permalinks]
 page = "/:slug/"
 
@@ -141,5 +135,5 @@ hrefTargetBlank = true
 # edit this block for your own language
 [languages.en]
 lang = "en"
-languageName = "English"
+label = "English"
 weight = 1
