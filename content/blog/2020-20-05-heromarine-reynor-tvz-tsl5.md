@@ -303,8 +303,3 @@ Another interesting thing to note is that each opening was designed to look fair
 Finally, there were two distinct moments where the build order was specifically picked for particular maps. The obvious tells are the [blind spot](https://youtu.be/0z0B-sr8LPs?t=1166) in the huge main bases on [Ever Dream LE](https://liquipedia.net/starcraft2/Ever_Dream_LE) which make drops easier, and the [cliffs](https://youtu.be/0z0B-sr8LPs?t=3480) on [Zen LE](https://liquipedia.net/starcraft2/Zen_LE) which make Siege Tanks more powerful.
 
 These minor decisions really make this a great series to study because it points out how a common framework (low economy, 8 Barracks, 2 Factory, 1 Starport, 2.5 mining bases) is adjusted based off of advantages that certain maps can give, and how to hide those minor differences from your opponent until they are too late to react to.
-
------
-
-If you would like to encourage me to make more posts like this, let me know on Twitter!
-<a href="https://twitter.com/intent/tweet?screen_name=thaniri&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @thaniri</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
