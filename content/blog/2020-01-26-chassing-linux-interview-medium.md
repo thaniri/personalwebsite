@@ -11,7 +11,7 @@ weight: -210
 
 # Linux System Administrator/DevOps Interview Questions
 
-I worked through the easy questions [last year](https://thaniri.com/blog/2019-01-01/). Since then I've studied for the LPIC 1 and 2 so I'm going to work through some more difficult material.
+I worked through the easy questions [last year]({{< relref "/blog/2019-01-01.md" >}}). Since then I've studied for the LPIC 1 and 2 so I'm going to work through some more difficult material.
 
 ## Medium Questions
 
@@ -391,7 +391,7 @@ Object based storage is a way of storing chunks of data in their entirety with m
 
 The benefit of object based storage is in the way data is written. An entire object needs to be written at once, and it is possible to rely on a distributed system with eventual consistency in order to ensure that the entire object is created or updated. This can make a write operation much more heavy than a block based storage system, however, getting rid of the need for transactions allows for distribution of the object to be much easier. This solves a fundamental scaling problem.
 
-A great use case for needing to store enormous amounts of data where the access to that data is distributed in many geographic locations, is a CDN. In fact, this website is powered by block storage. It is static HTML content stored in an AWS S3 bucket, and served over AWS Cloudfront. You can see how I did it [here](https://thaniri.com/blog/2019-11-11-deploying-this-static-website/)
+A great use case for needing to store enormous amounts of data where the access to that data is distributed in many geographic locations, is a CDN. In fact, this website is powered by block storage. It is static HTML content stored in an AWS S3 bucket, and served over AWS Cloudfront. You can see how I did it [here]({{< relref "/blog/2019-11-11-deploying-this-static-website.md" >}})
 
 Sources: [1](https://www.druva.com/blog/object-storage-versus-block-storage-understanding-technology-differences/), [2](https://cloudian.com/blog/object-storage-vs-block-storage/), [3](https://cloudacademy.com/blog/object-storage-block-storage/)
 

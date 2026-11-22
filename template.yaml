@@ -1,11 +1,12 @@
 ---
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "Creates S3 and Cloudfront distribution for a static website. Should only be deployed in us-east-1 region."
+Description: "Creates S3 and Cloudfront distribution for a static website. Deploy in ca-central-1 region after the certificate.yaml stack has been deployed in us-east-1."
 Parameters:
   DomainName:
     Type: String
-  ValidationDomain:
+  CertificateArn:
     Type: String
+    Description: 'ARN of the us-east-1 ACM certificate (CertificateArn output of the certificate.yaml stack)'
 Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
@@ -15,6 +16,11 @@ Resources:
       WebsiteConfiguration:
         IndexDocument: 'index.html'
         ErrorDocument: '404.html'
+      PublicAccessBlockConfiguration: # Allow a public bucket policy, but keep blocking public ACLs
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: false
+        RestrictPublicBuckets: false
   S3BucketPolicy:
     Type: AWS::S3::BucketPolicy
     Description: 'Allows the public to read the contents of S3bucket'
@@ -26,27 +32,10 @@ Resources:
               - "s3:GetObject"
             Effect: "Allow"
             Resource: !Join ['', ["arn:aws:s3:::", !Ref S3Bucket, "/*"]]
-            Principal:
-              AWS: !Join [' ', ["arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity", !Ref OriginAccessIdentity]]
-  TLSCert: # Look at stack output to see what DNS CNAME to create before CDNDistribution is made
-    Type: AWS::CertificateManager::Certificate
-    Description: 'Requests a TLS Certificate from Amazon Certificate Manager'
-    Properties:
-      DomainName: !Ref DomainName
-      DomainValidationOptions:
-        - DomainName: !Ref DomainName
-          ValidationDomain: !Ref ValidationDomain
-      ValidationMethod: 'DNS'
-  OriginAccessIdentity:
-    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-    Description: 'Limits access to the S3 bucket to only Cloudfront'
-    Properties:
-      CloudFrontOriginAccessIdentityConfig:
-        Comment: 'S3Website'
+            Principal: '*'
   CDNDistribution: # This resource takes a long time to finish
     Type: AWS::CloudFront::Distribution
     Description: 'Creates a CloudFront Distribution which serves content from S3Bucket'
-    DependsOn: OriginAccessIdentity
     Properties:
       DistributionConfig:
         Comment: 'S3Website'
@@ -55,17 +44,14 @@ Resources:
         DefaultRootObject: 'index.html'
         Enabled: true
         ViewerCertificate:
-          AcmCertificateArn: !Ref TLSCert
+          AcmCertificateArn: !Ref CertificateArn
           SslSupportMethod: 'sni-only'
         Origins:
           - Id: 'S3Website'
-            DomainName: !GetAtt S3Bucket.DomainName
-            S3OriginConfig:
-              OriginAccessIdentity:
-                Fn::Join:
-                  - ''
-                  - - 'origin-access-identity/cloudfront/'
-                    - Ref: OriginAccessIdentity
+            # S3 website endpoint (not the REST endpoint) so that /some/path/ resolves to /some/path/index.html
+            DomainName: !Select [2, !Split ['/', !GetAtt S3Bucket.WebsiteURL]]
+            CustomOriginConfig:
+              OriginProtocolPolicy: 'http-only' # S3 website endpoints do not support HTTPS
         HttpVersion: 'http2' # Forces sni and tls1.2+
         IPV6Enabled: true
         PriceClass: 'PriceClass_100' # EU and NA edge nodes only
