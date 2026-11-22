@@ -16,7 +16,7 @@
     {{- $title -}}
   {{- end -}}
   {{- print " " $sep " " $siteTitle -}}
-{{- else if ( or .IsNode ( eq .Section "page" ) ) -}}
+{{- else if ( or ( not .IsPage ) ( eq .Section "page" ) ) -}}
   {{ $title }} {{ $sep }} {{ $siteTitle }}
 {{- else -}}
   {{- if .Params.authors -}}
