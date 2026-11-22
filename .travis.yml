@@ -11,4 +11,4 @@ deploy:
   bucket: www.thaniri.ca
   local-dir: public
   skip_cleanup: true
-  region: us-east-1
+  region: ca-central-1
