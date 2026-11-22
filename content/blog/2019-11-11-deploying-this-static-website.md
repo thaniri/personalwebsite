@@ -24,10 +24,6 @@ This is the process I got it down to so far:
 2. Wait for the Cloudformation stack to get stuck on creating the Amazon Certificate Management resource. Cloudformation will provide a message to create a CNAME record in the domain that the website is going to be deployed to. Once the CNAME is made manually, the stack will proceed deploying. This can probably be automated by using the AWS CLI to parse this prompt and create the DNS record, but I only have one such website and I will not spend the time to do that.
 3. Get the certificate ARN from the certificate stack's outputs: `aws cloudformation describe-stacks --stack-name thaniriCertificate --region us-east-1 --query "Stacks[0].Outputs[?OutputKey=='CertificateArn'].OutputValue" --output text`
 4. Run an AWS CLI Command to deploy the website stack: `aws cloudformation create-stack --stack-name thaniriS3wesbite --template-body file://template.yaml --region ca-central-1 --parameters ParameterKey=DomainName,ParameterValue=thaniri.ca ParameterKey=CertificateArn,ParameterValue=<certificate ARN from step 3>`
-5. Manually modify the Cloudfront distribution origin domain name to be the S3 bucket website `www.thaniri.ca.s3-website.ca-central-1.amazonaws.com`. See TODO to know why this step is manually.
-6. Make a merge to my repository to get travis-ci to copy over the generated HTML files to the S3 bucket.
+5. Make a merge to my repository to get travis-ci to copy over the generated HTML files to the S3 bucket.
 
 While the process has been simplified, the waiting for the CNAME record creation and as well as the Cloudfront resource creation does end up taking several minutes.
-
-## TODO:
-I actually want to be able to read the contents of my S3 bucket as well as through CloudFront. However, the template doesn't accept the s3 website URL of a bucket as a valid s3 bucket URL. So for now, I deploy the stack "broken" and then in the CloudFront web console I change the origin to www.thaniri.ca.s3-website.ca-central-1.amazonaws.com. Given that I am allowed to actually do that through the web console, it is probably a misbehaviour of CloudFormation to not allow me to do it. I will eventually need to find out how to work around this when I begin another web project.
