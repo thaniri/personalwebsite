@@ -1,11 +1,12 @@
 ---
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "Creates S3 and Cloudfront distribution for a static website. Should only be deployed in us-east-1 region."
+Description: "Creates S3 and Cloudfront distribution for a static website. Deploy in ca-central-1 region after the certificate.yaml stack has been deployed in us-east-1."
 Parameters:
   DomainName:
     Type: String
-  ValidationDomain:
+  CertificateArn:
     Type: String
+    Description: 'ARN of the us-east-1 ACM certificate (CertificateArn output of the certificate.yaml stack)'
 Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
@@ -28,15 +29,6 @@ Resources:
             Resource: !Join ['', ["arn:aws:s3:::", !Ref S3Bucket, "/*"]]
             Principal:
               AWS: !Join [' ', ["arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity", !Ref OriginAccessIdentity]]
-  TLSCert: # Look at stack output to see what DNS CNAME to create before CDNDistribution is made
-    Type: AWS::CertificateManager::Certificate
-    Description: 'Requests a TLS Certificate from Amazon Certificate Manager'
-    Properties:
-      DomainName: !Ref DomainName
-      DomainValidationOptions:
-        - DomainName: !Ref DomainName
-          ValidationDomain: !Ref ValidationDomain
-      ValidationMethod: 'DNS'
   OriginAccessIdentity:
     Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
     Description: 'Limits access to the S3 bucket to only Cloudfront'
@@ -55,7 +47,7 @@ Resources:
         DefaultRootObject: 'index.html'
         Enabled: true
         ViewerCertificate:
-          AcmCertificateArn: !Ref TLSCert
+          AcmCertificateArn: !Ref CertificateArn
           SslSupportMethod: 'sni-only'
         Origins:
           - Id: 'S3Website'
