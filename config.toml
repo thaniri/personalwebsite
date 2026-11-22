@@ -131,9 +131,6 @@ weight = -10
 identifier = "repository"
 url = "https://github.com/thaniri/personalwebsite"
 
-[blackfriday]
-hrefTargetBlank = true
-
 [languages]
 # edit this block for your own language
 [languages.en]
