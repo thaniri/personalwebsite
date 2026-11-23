@@ -5,5 +5,5 @@ menu:
   - sidebar
 weight: -270
 ---
-> Accustom yourself to tireless activity...
-> — Alexander Suvorov
+> He plants trees to benefit another age.
+> — Caecilius Statius
