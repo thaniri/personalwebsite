@@ -1,11 +1,13 @@
 ---
-date: 2020-05-21T00:00:00+00:00
+date: 2020-05-21
 title: HeroMarine vs Reynor TSL5 Round 2 Analysis
 description: Analysis of a series where Gabriel "HeroMarine" Segat shows off a low economy mid-game focussed bio style to defeat Riccardo "Reynor" Romiti in a best of five series with a 3-1 score. The match was played on 2020-05-17.
 tags:
   - Starcraft 2
   - TvZ
 weight: -210
+aliases:
+  - /blog/2020-20-05-heromarine-reynor-tvz-tsl5/
 ---
 
 Back in 2012-2014 I used to write a lot of strategy posts on the teamliquid forums, and I'd like to take it up again... 6 years later.

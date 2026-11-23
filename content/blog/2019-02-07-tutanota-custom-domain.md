@@ -1,5 +1,5 @@
 ---
-date: 2019-02-07T00:00:00+00:00
+date: 2019-02-07
 title: Set Up A Custom Domain Email Inbox Using Tutanota
 description: At the time of writing, Tutanota premium costs €12 per year. This is not a sponsored post. I just think Tutanota is a great product.
 tags:

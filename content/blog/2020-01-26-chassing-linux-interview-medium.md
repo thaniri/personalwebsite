@@ -1,5 +1,5 @@
 ---
-date: 2020-01-26T00:00:00+00:00
+date: 2020-01-26
 title: Chassing Sysadmin Interview Questions (Medium)
 description: Working through these questions. Any question I could not answer immediately has a citation.
 tags:
