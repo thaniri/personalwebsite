@@ -13,23 +13,28 @@
 {{- with .Params.cover -}}
   {{- $type := ( printf "%T" . ) -}}
   {{- $isMap := ( not ( eq $type "string" ) ) -}}
-  <meta property='og:image' content='
-    {{- if $isMap -}}
-      {{- .image | absURL -}}
-    {{- else -}}
-      {{- . | absURL -}}
-    {{- end -}}'>
+
+  {{- $image := "" -}}
+  {{- if $isMap -}}
+    {{- $image = .image -}}
+  {{- else -}}
+    {{- $image = . -}}
+  {{- end -}}
+
+  {{- $image = ( replaceRE "^\\./" $.RelPermalink $image ) -}}
+
+  <meta property='og:image' content='{{- $image | absURL -}}'>
 {{- end -}}
 
 {{- with .Params.images -}}
   {{- range first 5 . -}}
-    <meta property='og:image' content='{{ . | absURL }}'>
+    <meta property='og:image' content='{{ ( replaceRE "^\\./" $.RelPermalink . ) | absURL }}'>
   {{- end -}}
 {{- end -}}
 
 {{- if not ( or .Params.images .Params.cover ) -}}
   {{- range $authorID := .Params.authors -}}
-    {{- $author := ( index $.Site.Data.authors $authorID ) -}}
+    {{- $author := ( index hugo.Data.authors $authorID ) -}}
     {{- with $author -}}
       {{- if or .social.email ( and .email.username .email.host ) -}}
       <meta property='og:image' content='https://www.gravatar.com/avatar/
@@ -48,19 +53,19 @@
 
 {{- with .Params.audios -}}
   {{- range first 5 . -}}
-    <meta property='og:audio' content='{{ . | absURL }}'>
+    <meta property='og:audio' content='{{ ( replaceRE "^\\./" $.RelPermalink . ) | absURL }}'>
   {{- end -}}
 {{- end -}}
 
 {{- with .Params.videos -}}
   {{- range first 5 . -}}
-    <meta property='og:video' content='{{ . | absURL }}'>
+    <meta property='og:video' content='{{ ( replaceRE "^\\./" $.RelPermalink . ) | absURL }}'>
   {{- end -}}
 {{- end -}}
 
 {{- if .IsPage -}}
   {{- range $authorID := .Params.authors -}}
-    {{- $author := ( index $.Site.Data.authors $authorID ) -}}
+    {{- $author := ( index hugo.Data.authors $authorID ) -}}
     {{- with $author.social.facebook -}}
       <meta property='article:author' content='https://facebook.com/{{ . }}'>
     {{- end -}}
@@ -92,8 +97,8 @@
     <meta property='article:expiration_time' content='{{ .ExpiryDate.Format $dateFormat }}'/>
   {{- end -}}
 {{- else -}}
-  {{- if not .Site.LastChange.IsZero -}}
-    <meta property='og:updated_time' content='{{ .Site.LastChange.Format $dateFormat }}'/>
+  {{- if not .Site.Lastmod.IsZero -}}
+    <meta property='og:updated_time' content='{{ .Site.Lastmod.Format $dateFormat }}'/>
   {{- end -}}
 {{- end -}}
 

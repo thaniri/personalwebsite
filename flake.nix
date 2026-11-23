@@ -15,6 +15,7 @@
         default = pkgs.mkShell {
           packages = [
             pkgs.awscli2
+            pkgs.hugo
           ];
         };
       });

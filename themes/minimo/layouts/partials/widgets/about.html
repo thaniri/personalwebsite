@@ -1,5 +1,5 @@
-{{- $defaultConfig := .Site.Data.config.default.widgets.about -}}
-{{- $configData := ( or .Site.Data.config.widgets.about $defaultConfig ) -}}
+{{- $defaultConfig := hugo.Data.config.default.widgets.about -}}
+{{- $configData := ( or hugo.Data.config.widgets.about $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
 {{- $config := ( ( index $configData $lang ) | default $configData ) -}}
 
@@ -13,11 +13,13 @@
     </div>
     {{ end }}
     <h2 class='title site-title '>
-    {{ with $config.title }}
+      <a href='{{ $.Site.Home.RelPermalink }}'>
+      {{ with $config.title }}
       {{- . -}}
-    {{ else }}
+      {{ else }}
       {{- .Site.Title -}}
-    {{ end }}
+      {{ end }}
+      </a>
     </h2>
     <div class='desc'>
     {{ with $config.description }}
