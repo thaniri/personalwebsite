@@ -1,5 +1,5 @@
 ---
-date: 2019-05-01T00:00:00+00:00
+date: 2019-05-01
 title: Rely On Smart Processes
 description: This post is about how relying on people to follow a process reliably is a fools errand because of the fact that people make mistakes. If we want to engineer failure resistent systems, we need to focus on designing processes to do our work, and not just the work itself.
 tags:

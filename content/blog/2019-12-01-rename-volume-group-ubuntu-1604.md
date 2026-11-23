@@ -1,5 +1,5 @@
 ---
-date: 2019-12-01T00:00:00+00:00
+date: 2019-12-01
 title: Rename A Volume Group On Ubuntu 16.04
 description: When using LVM, the vgrename command can rename a volume group. But there are more steps required in order to get the OS to use the new volume group correctly.
 tags:

@@ -1,5 +1,5 @@
 ---
-date: 2020-08-09T00:00:00+00:00
+date: 2020-08-09
 title: TY vs Stats GSL Season 2 2020 Game 4 Analysis
 description: Analysis of a game where Jeon "TY" Tae-yang played an extremely economically focused game against Kim "Stats" Dae-yeob featuring a complex timing attack and base race that Stats eventually overcame. The match was played on 2020-08-08.
 tags:
