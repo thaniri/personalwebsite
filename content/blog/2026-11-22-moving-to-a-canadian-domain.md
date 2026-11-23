@@ -9,8 +9,6 @@ tags:
 weight: -210
 ---
 
-# Moving To A Canadian Domain
-
 This is something I should have probably done a while back as a Canadian software developer, and now I've finally done it.
 
 You can now browse my website at [https://thaniri.ca](https://thaniri.ca) instead of the old `.com` domain. I'm also going through moving my email domain, but that will take longer to shake out as there are lots of accounts associated with my old email.
